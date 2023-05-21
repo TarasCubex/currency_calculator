@@ -1,0 +1,117 @@
+@use'../../styles/colors.scss';
+
+
+.header_container{
+  position: fixed;
+  top:0;
+  height: 80px;
+  width: 100%;
+  background-color: colors.$dark-navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  & > img{
+    margin: 0 20px;
+  }
+
+}
+
+.burger{
+  width: 24px;
+  min-height: 14px;
+  display: none;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 5px;
+  span{
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: colors.$white;
+    border-radius: 1px;
+  }
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+  flex-shrink: 0;
+  a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+  }
+}
+
+.mobile_menu{
+  &-open{
+    transform: translateX(0%);
+  }
+  &-closed{
+    transform: translateX(-100%);
+  }
+  transition: 0.5s;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  z-index: 99;
+  background-color: colors.$dark-navy;
+  padding: 1em;
+  li{
+    cursor: pointer;
+    padding: 1em 5px;
+    border-bottom: 1px solid rgba(165, 165, 165, 0.575);
+    text-align: left;
+    &:last-of-type{
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      a{
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 0.5em 1em;
+      }
+    }
+  }
+  & > :first-child > button{
+    margin: 2em 0;
+    span{
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: colors.$white;
+      border-radius: 1px;
+    }
+    & > :first-child{
+      transform: rotate(45deg) translateX(1px) translateY(2px);
+    }
+    & > :last-child{
+      transform: rotate(-45deg) translateY(-1px) translateX(-1px);
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .burger{
+    display: flex;
+  }
+  .header_container{
+    justify-content: space-between;
+    padding: 0 20px;
+    & > :not(img){
+      flex: 1 1 33%;
+    }
+    .wrap a, .wrap > :first-child{
+        display: none;
+      }
+  }
+}

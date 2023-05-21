@@ -1,0 +1,16 @@
+@use '../../../styles/colors.scss';
+
+
+.option{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0.5em 2em 0.5em 0;
+  img{
+    margin: 0;
+  }
+  span{
+    font-size: 14px;
+  }
+}

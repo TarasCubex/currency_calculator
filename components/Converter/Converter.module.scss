@@ -1,0 +1,42 @@
+@use '../../styles/colors.scss';
+
+.converter{
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  gap: 2em;
+  input{
+    height: 52px;
+    border: 2px solid colors.$dark-navy;
+    border-radius: 8px;
+    color: rgb(61, 61, 61);
+    padding: 0 8px;
+  }
+  label{
+    color: #616161;
+    margin-bottom: 0.35em;
+  }
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+  div{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}

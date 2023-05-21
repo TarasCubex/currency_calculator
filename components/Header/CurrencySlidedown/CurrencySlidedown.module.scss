@@ -1,0 +1,56 @@
+
+
+.slide_container {
+  position: relative;
+  z-index: 0;
+}
+
+.label{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  p{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ .toggle{
+    transform: rotate(180deg);
+  }
+  input[type="checkbox"]:checked ~ .content {
+    max-height: 555px;
+    padding-top: 0.5em;
+  }
+  input[type="checkbox"]:checked ~ .content p {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.toggle{
+  transform: rotate(0deg);
+  transition: 0.5s;
+}
+
+.content{
+  position: relative;
+  padding: 0;
+  max-height: 0px;
+  transition: max-height 0.25s cubic-bezier(0.17,0.67,0.83,0.67);
+  width: 100%;
+  p {
+    cursor: pointer;
+    color: white;
+    position: relative;
+    padding: 0.7em 0;
+    margin: 0;
+    transform: scale(0);
+    opacity: 0;
+  }
+}

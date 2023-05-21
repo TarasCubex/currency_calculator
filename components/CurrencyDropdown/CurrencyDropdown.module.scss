@@ -1,0 +1,72 @@
+@use '../../styles/colors.scss';
+
+.container{
+  background-color: transparent !important;
+}
+
+.menu{
+  background-color: colors.$dark-navy !important;
+  box-shadow: 2px 1px 9px 4px #4092df93 !important;
+  width: auto !important;
+  transform: translateX(-8px);
+}
+
+.separator{
+  display: none !important;
+}
+
+.option{
+  cursor: pointer;
+  padding: 8px !important;
+  &_selected{
+    cursor: pointer !important;
+    background-color: transparent !important;
+    color: colors.$gold !important;
+    border-right: 3px solid colors.$gold;
+    padding: 8px !important;
+  }
+  &_focused{
+    background-color: #66666644 !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+  }
+}
+
+.value{
+  color: colors.$white !important;
+  margin: 0 !important;
+  &_container{
+    padding: 0 !important;
+    min-width: max-content !important;
+  }
+}
+
+.indicator {
+  *{
+    padding: 2px !important;
+  }
+  svg{
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+  }
+}
+
+.control{
+  flex-wrap: nowrap !important;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  &_focused{
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+    font-size: 14px !important;
+    * {
+      color: colors.$gold !important;
+    }
+    svg{
+      transform: rotate(-180deg);
+    }
+  }
+}

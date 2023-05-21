@@ -1,0 +1,41 @@
+@use '../../styles/colors.scss';
+
+.btn{
+  position: relative;
+  padding: 0.4em 0.8em;
+  color: colors.$dark-navy;
+  border: 2px solid colors.$gold;
+  border-radius: 4px;
+  span{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    z-index: 1;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 4px;
+    background-color: colors.$gold;
+    z-index: -1;
+  }
+  &:hover{
+    background-color: colors.$gold;
+    &:before{
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background-color: rgba(255, 255, 255, 0.35);
+      border-radius: 4px;
+      z-index: 0;
+    }
+  }
+}
