@@ -16,6 +16,11 @@
     border-radius: 8px;
     color: rgb(61, 61, 61);
     padding: 0 8px;
+    opacity: 1;
+    &:disabled{
+      background-color: transparent;
+      background-color: rgba(255,255,255,0);
+    }
   }
   label{
     color: #616161;

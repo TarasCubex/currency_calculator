@@ -38,7 +38,7 @@ const Converter: React.FC<{ currency: TCurrency }> = ({ currency }) => {
         </div>
         <div>
           <label htmlFor="price">Price: </label>
-          <input id="price" value={price} disabled />
+          <input id="price" value={price} readOnly />
         </div>
       </div>
     </div>

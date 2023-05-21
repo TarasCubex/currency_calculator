@@ -306,6 +306,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+  -webkit-text-fill-color: black;
 }
 
 /**
