@@ -1,12 +1,12 @@
 'use client';
 
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Select from "react-select";
 import Option from "./Option/Option";
 import Control from "./Control/Control";
 import type { TOption } from "./CurrencyDropDown.types";
 import styles from "./CurrencyDropdown.module.scss";
-import { CurrencyContext } from "../../app/page";
+import type { TCurrency } from "@/types";
 
 const options: TOption[] = [
   { value: "usd", label: "USD" },
@@ -16,11 +16,11 @@ const options: TOption[] = [
   { value: "cad", label: "CAD" },
 ];
 
-const CurrencyDropdown = () => {
-  const { currency, setCurrency } = React.useContext(CurrencyContext);
+const CurrencyDropdown: React.FC<{currency: TCurrency, setCurrency : React.Dispatch<SetStateAction<TCurrency>>}> = ({currency, setCurrency}) => {
 
   return (
     <Select
+      instanceId='seclect'
       isMulti={false}
       options={options}
       value={{value: currency, label: currency.toUpperCase() as TOption['label']}}
@@ -40,7 +40,6 @@ const CurrencyDropdown = () => {
       closeMenuOnSelect={true}
       isSearchable={false}
       blurInputOnSelect={true}
-      //menuIsOpen
     />
   );
 };

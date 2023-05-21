@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import Image from 'next/image'
 import styles from './CurrencySlidedown.module.scss'
-import {CurrencyContext} from '../../../app/page'
 import type {TCurrency} from '../../../types'
 import {currencies} from '../../../initialData'
 
-const CurrencySlidedown = () => {
 
-  const {currency, setCurrency} = React.useContext(CurrencyContext)
+const CurrencySlidedown: React.FC<{currency: TCurrency, setCurrency : React.Dispatch<SetStateAction<TCurrency>>}> = ({currency, setCurrency}) => {
 
   const menu = Object.keys(currencies) as TCurrency[]
 

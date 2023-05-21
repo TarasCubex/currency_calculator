@@ -6,20 +6,18 @@ import Header from '../components/Header/Header'
 import Converter from '../components/Converter/Converter';
 import type {TCurrency} from '../types'
 
-export const CurrencyContext = React.createContext<{currency: TCurrency, setCurrency: Dispatch<SetStateAction<TCurrency>>}>(null!)
 
-const App = () => {
+const Page = () => {
 
   const [currency, setCurrency] = React.useState<TCurrency>('usd')
 
+
   return (
-    <CurrencyContext.Provider value={{currency, setCurrency}}>
       <div className="App">
-        <Header/>
+        <Header currency={currency} setCurrency={setCurrency} />
         <Converter currency={currency}/>
       </div>
-    </CurrencyContext.Provider>
   );
 }
 
-export default App;
+export default Page;

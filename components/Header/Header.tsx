@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.scss";
@@ -6,8 +6,9 @@ import NavBar from "../NavBar/NavBar";
 import LoginButton from "../LoginButton/LoginButton";
 import CurrencyDropdown from "../CurrencyDropdown/CurrencyDropdown";
 import CurrencySlidedown from "./CurrencySlidedown/CurrencySlidedown";
+import type { TCurrency } from "@/types";
 
-const Header = () => {
+const Header: React.FC<{currency: TCurrency, setCurrency : React.Dispatch<SetStateAction<TCurrency>>}> = ({currency, setCurrency}) => {
   const [isOpenMenu, setIsOpenMenu] = React.useState(false);
 
   return (
@@ -25,7 +26,7 @@ const Header = () => {
       <Image src="/img/Logo.png" alt="logo" width={110} height={40} priority />
       <NavBar />
       <div className={styles.wrap}>
-        <CurrencyDropdown />
+        <CurrencyDropdown currency={currency} setCurrency={setCurrency} />
         <Link href="/">Sing Up</Link>
         <LoginButton />
       </div>
@@ -49,7 +50,7 @@ const Header = () => {
         <li>OSRS Accounts</li>
         <li>Reward Chests</li>
         <li>
-          <CurrencySlidedown />
+          <CurrencySlidedown currency={currency} setCurrency={setCurrency} />
         </li>
         <li>
           <Link href="/">SIng Up</Link>
