@@ -1,7 +1,6 @@
 'use client';
 
 import React, { Dispatch, SetStateAction } from 'react';
-import '../styles/index.scss';
 import Header from '../components/Header/Header'
 import Converter from '../components/Converter/Converter';
 import type {TCurrency} from '../types'
@@ -13,7 +12,7 @@ const Page = () => {
 
 
   return (
-      <div className="App">
+      <div className='App'>
         <Header currency={currency} setCurrency={setCurrency} />
         <Converter currency={currency}/>
       </div>
